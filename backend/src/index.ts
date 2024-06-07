@@ -11,5 +11,5 @@ AppDataSource.initialize().then(async () => {
     app.use(cors());
     app.use(bodyParser.json());
     app.use(routes);
-    app.listen(process.env.PORT || 5432);
+    app.listen(process.env.PORT || 3333);
 })
