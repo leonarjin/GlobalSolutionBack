@@ -12,7 +12,7 @@ const getDBConfig = (json: any) => {
         if (!prop.startsWith("DB_")){
             continue;
         }
-        const newProp = prop.substring(prop.indexOf("_")) + 1).toLowerCase();
+        const newProp = prop.substring(prop.indexOf("_") + 1).toLowerCase();
         newObj[newProp] = json[prop];
     }
 
