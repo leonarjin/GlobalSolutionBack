@@ -1,5 +1,6 @@
 {
     "devCommand": "npm run dev",
+    "installCommand": "yarn install",
     "builds": [
         {
             "src": "src/index.ts",
