@@ -4,7 +4,7 @@ import { getProblems, getProblem, saveProblem, updateProblem, deleteProblem } fr
 
 const routes = Router()
 routes.get('/home', (request: Request, response: Response) => {
-    return response.json({ message: 'Hello Turma 007!' })
+    return response.json({ message: 'Hello World!' })
 })
 routes.get('/tasks', getTasks)
 routes.post('/tasks', saveTask)

@@ -1,5 +1,5 @@
 import "reflect-metadata"
-import { DataSource } from "typeorm"
+import { DataSource, DataSourceOptions } from "typeorm"
 import { User } from "./entity/User"
 import { Tasks } from "./entity/Tasks"
 import { Problems } from "./entity/Problems"
@@ -12,9 +12,13 @@ const getDBConfig = (json: any) => {
         if (!prop.startsWith("DB_")){
             continue;
         }
-        const newProp = prop.substring(prop.indexOf("_"))
+        const newProp = prop.substring(prop.indexOf("_")) + 1).toLowerCase();
+        newObj[newProp] = json[prop];
     }
+
+    return newObj;
 }
+const config = getDBConfig(process.env) as DataSourceOptions;
 
 export const AppDataSource = new DataSource({
     type: "postgres",
